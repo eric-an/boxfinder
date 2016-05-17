@@ -28,7 +28,7 @@ class BoxesController < ApplicationController
 
     respond_to do |format|
       if @box.save
-        format.html { redirect_to boxes, notice: 'Box was successfully created.' }
+        format.html { redirect_to boxes_url, notice: 'Box was successfully created.' }
         format.json { render :show, status: :created, location: @box }
       else
         format.html { render :new }
