@@ -1,0 +1,32 @@
+<div class="container-fluid">
+
+<h1>Listing Boxes</h1>
+
+<%= link_to 'Create New Box', new_box_path %>
+
+  <div class="row box_list">
+    <div class="col-xs-12 col-s-3 col-md-2">
+      <h4>Name</h4>
+    </div>
+    <div class="col-xs-12 col-s-3 col-md-2">
+      <h4>Length</h4>
+    </div>
+    <div class="col-xs-12 col-s-3 col-md-2">
+      <h4>Width</h4>
+    </div>
+    <div class="col-xs-12 col-s-3 col-md-2">
+      <h4>Height</h4>
+    </div>
+    <div class="col-xs-12 col-s-3 col-md-2">
+      <h4>Weight</h4>
+    </div>
+    <div class="col-xs-12 col-s-3 col-md-2">
+      <h4>Dimensional Weight</h4>
+    </div>
+  </div><!-- /row -->
+
+  <%= render @boxes %>
+
+<br>
+</div>
+

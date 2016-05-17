@@ -1,0 +1,41 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Length:</strong>
+  <%= @shipment.length %>
+</p>
+
+<p>
+  <strong>Width:</strong>
+  <%= @shipment.width %>
+</p>
+
+<p>
+  <strong>Height:</strong>
+  <%= @shipment.height %>
+</p>
+
+<p>
+  <strong>Weight:</strong>
+  <%= @shipment.weight %>
+</p>
+
+<p>
+  <strong>Weight:</strong>
+  <%= @shipment.weight %>
+</p>
+
+<p>
+  <strong>DIM Weight:</strong>
+  <%= @shipment.dim_weight %>
+</p>
+
+<p>
+  <strong>Weight:</strong>
+  <%= @shipment.girth %>
+</p>
+
+<%= @shipment.best_box.gsub(/\n/, "<br>").html_safe %><br>
+
+<%= link_to 'Edit', edit_shipment_path(@shipment) %> |
+<%= link_to 'Back', shipments_path %>

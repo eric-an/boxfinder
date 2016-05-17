@@ -1,0 +1,29 @@
+<div class="container-fluid">
+  <div class="row box_list">
+    <div class="col-xs-12 col-md-2">
+      <%= box.length %> x <%= box.width %> x <%= box.height %>
+      <br>
+      <%= link_to 'Show', box %>
+      <%= link_to 'Edit', edit_box_path(box) %>
+      <%= link_to 'Destroy', box, method: :delete, data: { confirm: 'Are you sure?' } %>
+    </div>
+    <div class="col-xs-12 col-md-2">
+        <%= box.length %>
+    </div>
+    <div class="col-xs-12 col-md-2">
+        <%= box.width %>
+    </div>
+    <div class="col-xs-12 col-md-2">
+        <%= box.height %>
+    </div>
+    <div class="col-xs-12 col-md-2">
+        <%= box.weight %>
+    </div>
+    <div class="col-xs-12 col-md-2">
+        <%= '%.2f' % box.dim_weight %>
+    </div>
+
+    Exceeds Girth:
+    <%= box.girth %>
+  </div><!-- /row -->
+</div><!-- /container-fluid -->

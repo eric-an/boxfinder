@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Length:</strong>
+  <%= @box.length %>
+</p>
+
+<p>
+  <strong>Width:</strong>
+  <%= @box.width %>
+</p>
+
+<p>
+  <strong>Height:</strong>
+  <%= @box.height %>
+</p>
+
+<p>
+  <strong>Weight:</strong>
+  <%= @box.weight %>
+</p>
+
+<%= link_to 'Edit', edit_box_path(@box) %> |
+<%= link_to 'Back', boxes_path %>
