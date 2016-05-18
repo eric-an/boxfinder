@@ -4,7 +4,7 @@ class BoxesController < ApplicationController
   # GET /boxes
   # GET /boxes.json
   def index
-    @boxes = Box.all
+    @boxes = Box.all.sort_by { |box| [box.length, box.width, box.height] }
   end
 
   # GET /boxes/1
