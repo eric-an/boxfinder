@@ -28,6 +28,6 @@ class Shipment < ActiveRecord::Base
 
     Box.all.each { |box| possible_sizes << box if self.cubic_volume <= box.cubic_volume && conditions(box)}
 
-    possible_sizes.sort_by! { |box| [box.length, box.width, box.height] }.map { |box| "#{box.length} x #{box.width} x #{box.height}" }.join("\n")
+    possible_sizes.sort_by! { |box| [box.length, box.width, box.height] }.map { |box| "#{box.length} x #{box.width} x #{box.height} || DIM Weight: #{'%.2f' % box.dim_weight}lbs." }.join("\n")
   end
 end
