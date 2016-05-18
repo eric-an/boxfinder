@@ -1,36 +1,31 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Length:</strong>
-  <%= @shipment.length %>
-</p>
+<div class="container-fluid">
+  <h2>Shipment</h2> <%= link_to 'Edit Data', edit_shipment_path(@shipment) %>
+  <div class="row shipment_data">
+    <div class="col-xs-3 col-s-3 col-md-offset-2 col-md-2">
+      <strong>Size:</strong>
+      <h5><%= @shipment.length %> x <%= @shipment.width %> x <%= @shipment.height %></h5>
+    </div>
 
-<p>
-  <strong>Width:</strong>
-  <%= @shipment.width %>
-</p>
+    <div class="col-xs-3 col-s-3 col-md-2">
+      <strong>Weight:</strong><br>
+        <%= @shipment.weight %>
+    </div>
 
-<p>
-  <strong>Height:</strong>
-  <%= @shipment.height %>
-</p>
+    <div class="col-xs-3 col-s-3 col-md-2">
+      <strong>DIM Weight</strong><br>
+        <%= @shipment.dim_weight %>
+    </div>
 
-<p>
-  <strong>Weight:</strong>
-  <%= @shipment.weight %>
-</p>
+    <div class="col-xs-3 col-s-3 col-md-2">
+      <p><strong>Exceeds girth:</strong><br>
+        <%= @shipment.girth %></p>
+    </div>
+  </div>
 
-<p>
-  <strong>DIM Weight:</strong>
-  <%= @shipment.dim_weight %>
-</p>
-
-<p>
-  <strong>Weight:</strong>
-  <%= @shipment.girth %>
-</p>
-
-<%= @shipment.best_box.gsub(/\n/, "<br>").html_safe %><br>
-
-<%= link_to 'Edit', edit_shipment_path(@shipment) %> |
-<%= link_to 'Back', shipments_path %>
+  <div class="solutions">
+    <h3>Possible Box Sizes:</h3>
+      <p><%= @shipment.best_box.gsub(/\n/, "<br>").html_safe %></p>
+  </div>
+</div>

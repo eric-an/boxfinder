@@ -1,26 +1,18 @@
   <div class="row box_list">
-    <div class="col-xs-2 col-s-2 col-md-2">
-      <%= box.length %> x <%= box.width %> x <%= box.height %>
+    <div class="col-xs-3 col-s-3 col-md-offset-2 col-md-2">
+      <h5><%= box.length %> x <%= box.width %> x <%= box.height %></h5>
+    </div>
+    <div class="col-xs-3 col-s-3 col-md-2">
+      <h5><%= '%.2f' % box.dim_weight %></h5>
+    </div>
+    <div class="col-xs-3 col-s-3 col-md-2">
+      Box Weight: <%= box.weight %>lbs.<br>
+      Exceeds Girth: <%= box.girth %>
+    </div>
+    <div class="col-xs-3 col-s-3 col-md-2">
       <div class="edit_links">
-        <%= link_to 'Show', box %> |
         <%= link_to 'Edit', edit_box_path(box) %> |
         <%= link_to 'Destroy', box, method: :delete, data: { confirm: 'Are you sure?' } %>
       </div>
-    </div>
-    <div class="col-xs-2 col-s-2 col-md-2">
-      <%= box.length %>
-    </div>
-    <div class="col-xs-2 col-s-2 col-md-2">
-      <%= box.width %>
-    </div>
-    <div class="col-xs-2 col-s-2 col-md-2">
-      <%= box.height %>
-    </div>
-    <div class="col-xs-2 col-s-2 col-md-2">
-      <%= '%.2f' % box.dim_weight %>
-    </div>
-    <div class="col-xs-2 col-s-2 col-md-2">
-      Box Weight: <%= box.weight %>lbs.<br>
-      Exceeds Girth: <%= box.girth %>
     </div>
   </div><!-- /row -->
