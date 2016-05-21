@@ -20,21 +20,21 @@ class Shipment < ActiveRecord::Base
   end
 
   def conditions(box)
-    condition1 = box.length >= self.length && box.length <= self.length + 5
-    condition2 = box.width >= self.height || box.width >= self.width
-    condition3 = box.height >= self.height || box.height >= self.width
-    cond = condition1 && condition2
-    cond_two = condition2 && condition3
-    cond_three = box.height >= self.height
-    cond_four = cond && cond_two
-    box if cond_four && cond_three
+    box_length = box.length >= self.length && box.length <= self.length + 30
+    box_width = box.width >= self.height || box.width >= self.width
+    box_height = box.height >= self.height || box.height >= self.width
+    condition_one = box_length && box_width
+    condition_two = box_width && box_height
+    condition_three = condition_one && condition_two
+    condition_four = box.height >= self.height
+    box if condition_three && condition_four
   end
 
   def best_box
     possible_sizes = []
 
-    Box.all.each { |box| possible_sizes << box if self.cubic_volume <= box.cubic_volume && conditions(box)}
+    Box.all.each { |box| possible_sizes << box if self.cubic_volume <= box.cubic_volume && conditions(box) }
 
-    possible_sizes.sort_by! { |box| [box.length, box.width, box.height] }.map { |box| "#{box.length} x #{box.width} x #{box.height} || DIM Weight: #{'%.2f' % box.dim_weight}lbs." }.join("\n")
+    possible_sizes.sort_by! { |box| [box.length, box.width, box.height] }.take(5).map { |box| "#{box.length} x #{box.width} x #{box.height} || DIM Weight: #{'%.2f' % box.dim_weight}lbs." }.join("\n")
   end
 end
