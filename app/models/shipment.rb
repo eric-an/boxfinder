@@ -25,9 +25,11 @@ class Shipment < ActiveRecord::Base
     box_height = box.height >= self.height || box.height >= self.width
     condition_one = box_length && box_width
     condition_two = box_width && box_height
-    condition_three = condition_one && condition_two
+    condition_three = box.width >= self.width
     condition_four = box.height >= self.height
-    box if condition_three && condition_four
+    condition_five = condition_one && condition_two
+    condition_six = condition_three && condition_four
+    box if condition_five && condition_six
   end
 
   def best_box
