@@ -1,8 +1,9 @@
 <div class="container-fluid">
 
 <h1>Listing Boxes</h1>
-
-<%= link_to 'Create New Box', new_box_path %>
+  <div class="new_shipment_link">
+    <%= link_to 'Create New Shipment', new_shipment_path(@shipment), class: "btn btn-lg btn-primary btn-block" %><br>
+  </div>
 
   <div class="row box_list">
     <div class="col-xs-3 col-s-3 col-md-offset-2 col-md-2">

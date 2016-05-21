@@ -1,31 +1,22 @@
-<p id="notice"><%= notice %></p>
-
 <div class="container-fluid">
-  <h2>Shipment</h2> <%= link_to 'Create New Shipment', new_shipment_path(@shipment) %>
-  <div class="row shipment_data">
-    <div class="col-xs-3 col-s-3 col-md-offset-2 col-md-2">
-      <strong>Size:</strong>
-      <h5><%= @shipment.length %> x <%= @shipment.width %> x <%= @shipment.height %></h5>
-    </div>
 
-    <div class="col-xs-3 col-s-3 col-md-2">
-      <strong>Weight:</strong><br>
-        <%= @shipment.weight %>
-    </div>
+  <div class="shipment_info">
+    <p><strong>Shipment Size: </strong><%= @shipment.length %> x <%= @shipment.width %> x <%= @shipment.height %></p>
 
-    <div class="col-xs-3 col-s-3 col-md-2">
-      <strong>DIM Weight</strong><br>
-        <%= '%.2f' % @shipment.dim_weight %>lbs.
-    </div>
-
-    <div class="col-xs-3 col-s-3 col-md-2">
-      <p><strong>Exceeds girth:</strong><br>
-        <%= @shipment.girth %></p>
+    <p><strong>Weight: </strong><%= @shipment.weight %> lbs.</p>
+    
+    <div class="edit_shipment_link">
+      <%= link_to 'Edit Shipment Details', edit_shipment_path(@shipment), class: "btn btn-sm btn-success btn-block" %>
     </div>
   </div>
 
   <div class="solutions">
-    <h3>Possible Box Sizes:</h3>
-      <p><%= @shipment.best_box.gsub(/\n/, "<br>").html_safe %></p>
+    <h4>Possible Box Sizes:</h4>
+      <p><%= @shipment.best_box.gsub(/\n/, "<br><br>").html_safe %></p>
   </div>
+
+  <div class="new_shipment_link">
+    <%= link_to 'Create New Shipment', new_shipment_path(@shipment), class: "btn btn-lg btn-primary btn-block" %><br>
+  </div>
+
 </div>

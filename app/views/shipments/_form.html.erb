@@ -11,25 +11,25 @@
     </div>
   <% end %>
 
-      <div class="form-inline">
-        <div class="field">
-          <%= f.label :length, "Length (input longest side)" %>
-          <%= f.text_field :length %>
-        </div>
-        <div class="field">
-          <%= f.label :width, "Width" %>
-          <%= f.text_field :width %>
-        </div>
-        <div class="field">
-          <%= f.label :height, "Height" %>
-          <%= f.text_field :height %>
-        </div>
-        <div class="field">
-          <%= f.label :weight, "Weight" %>
-          <%= f.text_field :weight %>
-        </div>
-        <div class="actions">
-          <%= f.submit("Find the best size!", :class => "btn btn-lg btn-primary btn-block")%>
-        </div>
-      </div> 
+  <div class="form-inline">
+    <div class="field">
+      <%= f.label :length, "Length (input longest side)" %>
+      <%= f.text_field :length %>
+    </div>
+    <div class="field">
+      <%= f.label :width, "Width" %>
+      <%= f.text_field :width %>
+    </div>
+    <div class="field">
+      <%= f.label :height, "Height" %>
+      <%= f.text_field :height %>
+    </div>
+    <div class="field">
+      <%= f.label :weight, "Weight (lbs.)" %>
+      <%= f.text_field :weight %>
+    </div>
+    <div class="actions">
+      <%= f.submit("Find the best box!", :class => "btn btn-lg btn-primary btn-block")%>
+    </div>
+  </div> 
 <% end %>

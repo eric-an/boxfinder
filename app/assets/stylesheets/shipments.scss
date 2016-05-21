@@ -2,17 +2,33 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.shipment_data, .solutions {
-  text-align: center;
+
+.new_shipment_link {
+  width: 30%;
+  margin: 2em auto;
+}
+
+.edit_shipment_link {
+  width: 15%;
+}
+
+.shipment_info {
+  margin: 2em 0 0 2em;
 }
 
 .solutions {
-  margin-top: 5em;
+  text-align: center;
+}
+
+.solutions p {
+  font-size: 18px;
+  margin-top: 1em;
 }
 
 form {
   width: 300px;
   margin: 0 auto;
+  margin-top: 3em;
 }
 
 form label {
