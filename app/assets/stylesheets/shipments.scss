@@ -2,18 +2,19 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-
 .new_shipment_link {
   width: 30%;
   margin: 2em auto;
 }
 
-.edit_shipment_link {
-  width: 15%;
+.area {
+  box-shadow: 10px 10px 15px #888;
 }
 
-.shipment_info {
-  margin: 2em 0 0 2em;
+.header {
+  width: 135px;
+  margin: 0 auto;
+  margin-bottom: 2em;
 }
 
 .solutions {
@@ -21,14 +22,14 @@
 }
 
 .solutions p {
-  font-size: 18px;
+  font-size: 16px;
   margin-top: 1em;
 }
 
 form {
-  width: 300px;
+  width: 350px;
   margin: 0 auto;
-  margin-top: 3em;
+  margin-left: 55px;
 }
 
 form label {

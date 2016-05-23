@@ -19,17 +19,26 @@ class Shipment < ActiveRecord::Base
     oversize_charge = measurement ? "yes" : "no"
   end
 
-  def conditions(box)
+ def conditions(box)
     box_length = box.length >= self.length && box.length <= self.length + 30
-    box_width = box.width >= self.height || box.width >= self.width
-    box_height = box.height >= self.height || box.height >= self.width
-    condition_one = box_length && box_width
-    condition_two = box_width && box_height
-    condition_three = box.width >= self.width
-    condition_four = box.height >= self.height
-    necessary_condition = condition_one && condition_two
-    necessary_condition_two = condition_three && condition_four
-    box if necessary_condition && necessary_condition_two
+    
+    if self.height_check
+      requirement = box.height >= self.height && box.width >= self.width
+      requirement_two = box_length
+      box if requirement && requirement_two
+    else
+      box_one_width = box.width >= self.height
+      box_one_height = box.height >= self.width
+      box_two_width = box.width >= self.width
+      box_two_height = box.height >= self.height
+      condition = box_one_width && box_one_height
+      condition_two = box_two_width && box_two_height
+
+      necessary_condition = box_length 
+      necessary_condition_two = condition || condition_two
+
+      box if necessary_condition && necessary_condition_two
+    end
   end
 
   def best_box
@@ -37,6 +46,6 @@ class Shipment < ActiveRecord::Base
 
     Box.all.each { |box| possible_sizes << box if self.cubic_volume <= box.cubic_volume && conditions(box) }
 
-    possible_sizes.sort_by! { |box| [box.length, box.width, box.height] }.take(3).map { |box| "#{box.length} x #{box.width} x #{box.height} || DIM Weight: #{'%.2f' % box.dim_weight}lbs." }.join("\n")
+    possible_sizes.sort_by! { |box| [box.dim_weight, box.length, box.width, box.height] }.take(3).map { |box| "#{box.length} x #{box.width} x #{box.height} || DIM Weight: #{'%.2f' % box.dim_weight}lbs." }.join("\n")
   end
 end

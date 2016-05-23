@@ -1,22 +1,45 @@
+<%= link_to 'See All Boxes', boxes_path %><br><br>
+
 <div class="container-fluid">
-
-  <div class="shipment_info">
-    <p><strong>Shipment Size: </strong><%= @shipment.length %> x <%= @shipment.width %> x <%= @shipment.height %></p>
-
-    <p><strong>Weight: </strong><%= @shipment.weight %> lbs.</p>
-    
-    <div class="edit_shipment_link">
-      <%= link_to 'Edit Shipment Details', edit_shipment_path(@shipment), class: "btn btn-sm btn-success btn-block" %>
-    </div>
+  <div class="header">
+    <h3>Box Finder</h3>
   </div>
+  <div class="row">
+    <div class="col-xs-12 col-s-6 col-md-4 col-md-offset-2 area">
+      <%= form_for(@shipment) do |f| %>
+        <div class="form-inline">
+          <div class="field">
+            <%= f.label :length, "Length (input longest side)" %>
+            <%= f.text_field :length %>
+          </div>
+          <div class="field">
+            <%= f.label :width, "Width" %>
+            <%= f.text_field :width %>
+          </div>
+          <div class="field">
+            <%= f.label :height, "Height" %>
+            <%= f.text_field :height %>
+          </div>
+          <div class="field">
+            <%= f.label :weight, "Weight (lbs.)" %>
+            <%= f.text_field :weight %>
+          </div>
+          <div class="field">
+            <%= f.check_box :height_check %>            
+            <%= f.label "Check if Height Matters!" %>
+          </div>
+          <div class="actions">
+            <%= f.submit("Find the best box!", :class => "btn btn-lg btn-primary btn-block")%>
+          </div>
+        </div> 
+      <% end %><!-- form_for -->
+    </div><!-- col -->
 
-  <div class="solutions">
-    <h4>Possible Box Sizes:</h4>
-      <p><%= @shipment.best_box.gsub(/\n/, "<br><br>").html_safe %></p>
-  </div>
-
-  <div class="new_shipment_link">
-    <%= link_to 'Create New Shipment', new_shipment_path(@shipment), class: "btn btn-lg btn-primary btn-block" %><br>
-  </div>
-
-</div>
+    <div class="col-xs-12 col-s-6 col-md-4 area">
+      <div class="solutions">
+        <h4>Possible Solutions:</h4>
+          <p><%= @shipment.best_box.gsub(/\n/, "<br><br>").html_safe %></p>
+      </div>
+    </div><!-- col -->
+  </div><!-- row -->
+</div><!-- container -->

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160516052034) do
+ActiveRecord::Schema.define(version: 20160523060653) do
 
   create_table "boxes", force: :cascade do |t|
     t.float    "length"
@@ -27,8 +27,9 @@ ActiveRecord::Schema.define(version: 20160516052034) do
     t.float    "width"
     t.float    "height"
     t.float    "weight"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",                   null: false
+    t.datetime "updated_at",                   null: false
+    t.boolean  "height_check", default: false
   end
 
 end
