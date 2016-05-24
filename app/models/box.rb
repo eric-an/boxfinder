@@ -15,7 +15,7 @@ class Box < ActiveRecord::Base
   def girth
     length = sorted_sides.last
     girth = (2*sorted_sides.first) + (2*sorted_sides[1])
-    measurement = (length + girth) > 165 
+    measurement = (length + girth) > 130
     oversize_charge = measurement ? "yes" : "no"
   end
 
