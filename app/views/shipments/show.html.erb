@@ -26,7 +26,7 @@
           </div>
           <div class="field">
             <%= f.check_box :height_check %>            
-            <%= f.label "Check if Height Matters!" %>
+            <%= f.label "Check here if Height Matters!" %>
           </div>
           <div class="actions">
             <%= f.submit("Find the best box!", :class => "btn btn-lg btn-primary btn-block")%>
@@ -36,6 +36,11 @@
     </div><!-- col -->
 
     <div class="col-xs-12 col-s-6 col-md-4 area">
+      <div>
+        <% if @shipment.girth == "yes" %>
+          <strong><p class="girth">*Shipment size exceeds girth charge.*</p></strong>
+        <% end %>
+      </div>
       <div class="solutions">
         <h4>Possible Solutions:</h4>
           <p><%= @shipment.best_box.gsub(/\n/, "<br><br>").html_safe %></p>

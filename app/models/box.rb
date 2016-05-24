@@ -19,4 +19,8 @@ class Box < ActiveRecord::Base
     oversize_charge = measurement ? "yes" : "no"
   end
 
+    def exceeds_girth(box)
+    "exceeds girth" if box.girth == "yes"
+  end
+
 end

@@ -13,9 +13,9 @@ class Shipment < ActiveRecord::Base
   end
 
   def girth
-    length = sorted_sides.last
-    girth = (2*sorted_sides.first) + (2*sorted_sides[1])
-    measurement = (length + girth) > 165 
+    length = sorted_sides.last+1
+    girth = (2*(sorted_sides.first+1)) + (2*(sorted_sides[1]+1))
+    measurement = (length + girth) > 130
     oversize_charge = measurement ? "yes" : "no"
   end
 
@@ -46,6 +46,6 @@ class Shipment < ActiveRecord::Base
 
     Box.all.each { |box| possible_sizes << box if self.cubic_volume <= box.cubic_volume && conditions(box) }
 
-    possible_sizes.sort_by! { |box| [box.dim_weight, box.length, box.width, box.height] }.take(3).map { |box| "#{box.length} x #{box.width} x #{box.height} || DIM Weight: #{'%.2f' % box.dim_weight}lbs." }.join("\n")
+    possible_sizes.sort_by! { |box| [box.dim_weight, box.length, box.width, box.height] }.take(3).map { |box| "#{box.length} x #{box.width} x #{box.height} || DIM Weight: #{'%.2f' % box.dim_weight}lbs. #{box.exceeds_girth(box)}" }.join("\n")
   end
 end
