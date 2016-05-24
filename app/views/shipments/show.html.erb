@@ -21,10 +21,6 @@
             <%= f.text_field :height %>
           </div>
           <div class="field">
-            <%= f.label :weight, "Weight (lbs.)" %>
-            <%= f.text_field :weight %>
-          </div>
-          <div class="field">
             <%= f.check_box :height_check %>            
             <%= f.label "Check here if Height Matters!" %>
           </div>
@@ -35,7 +31,7 @@
       <% end %><!-- form_for -->
     </div><!-- col -->
 
-    <div class="col-xs-12 col-s-6 col-md-4 area">
+    <div class="col-xs-12 col-s-6 col-md-5 area">
       <div>
         <% if @shipment.girth == "yes" %>
           <strong><p class="girth">*Shipment size exceeds girth charge.*</p></strong>

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160523060653) do
+ActiveRecord::Schema.define(version: 20160524054122) do
 
   create_table "boxes", force: :cascade do |t|
     t.float    "length"
@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(version: 20160523060653) do
     t.float    "weight"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string   "location"
   end
 
   create_table "shipments", force: :cascade do |t|
