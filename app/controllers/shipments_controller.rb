@@ -1,7 +1,7 @@
 class ShipmentsController < ApplicationController
   before_action :set_shipment, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, only: [:index, :destroy]
-  load_and_authorize_resource only: [:index, :destroy, :edit]
+  load_and_authorize_resource only: [:index, :new, :create, :edit, :destroy]
   # GET /shipments
   # GET /shipments.json
   def index

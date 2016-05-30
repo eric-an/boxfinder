@@ -1,3 +1,6 @@
+#rake db:schema:dump
+#rake db:schema:load
+
 #section A
 Box.create(length: 16, width: 8, height: 4, location: "A")
 Box.create(length: 16, width: 10, height: 4, location: "A")
@@ -31,7 +34,6 @@ Box.create(length: 18, width: 14, height: 10, location: "E")
 Box.create(length: 20, width: 15, height: 6, location: "E")
 Box.create(length: 24, width: 10, height: 10, location: "E")
 Box.create(length: 24, width: 14, height: 4, location: "E")
-
 
 #section F
 Box.create(length: 6, width: 6, height: 2, location: "F")
