@@ -38,10 +38,10 @@
         <% end %>
       </div>
       <div class="solutions">
-        <h4>Possible Solutions:</h4>
+        <h4>Best Solution:</h4>
           <p><%= @shipment.best_box.gsub(/\n/, "<br><br>").html_safe %></p>
       </div>
     </div><!-- col -->
   </div><!-- row -->
 </div><!-- container -->
-<%= link_to 'See All Boxes', boxes_path %>
+<%= link_to 'List of Box Sizes', boxes_path %>
