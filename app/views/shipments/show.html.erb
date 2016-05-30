@@ -1,8 +1,8 @@
-<%= link_to 'See All Boxes', boxes_path %><br><br>
-
-<div class="container-fluid">
+<br><br>
+<%= image_tag "2.png", class: "ninja" %>
+<div class="container-fluid shipments">
   <div class="header">
-    <h3>Box Finder</h3>
+    <h3>Box Ninja</h3>
   </div>
   <div class="row">
     <div class="col-xs-12 col-s-6 col-md-4 col-md-offset-2 area">
@@ -22,7 +22,7 @@
           </div>
           <div class="field">
             <%= f.check_box :height_check %>            
-            <%= f.label "Check here if Height Matters!" %>
+            <%= f.label "check if height matters" %>
           </div>
           <div class="actions">
             <%= f.submit("Find the best box!", :class => "btn btn-lg btn-primary btn-block")%>
@@ -44,3 +44,4 @@
     </div><!-- col -->
   </div><!-- row -->
 </div><!-- container -->
+<%= link_to 'See All Boxes', boxes_path %>

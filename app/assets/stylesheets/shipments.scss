@@ -1,28 +1,58 @@
 // Place all the styles related to the shipments controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+body {
+  background: url("3.jpg");
+  background-size: cover;
+  color: #432F21;
+}
+
+.ninja {
+  height: 148px;
+  position: absolute;
+  margin-left: 65%;
+  margin-top: -3em;
+}
+.shipments {
+/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#c6bdab+23,dfded4+100 */
+background: #c6bdab; /* Old browsers */
+background: -moz-linear-gradient(top,  #c6bdab 23%, #dfded4 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top,  #c6bdab 23%,#dfded4 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom,  #c6bdab 23%,#dfded4 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c6bdab', endColorstr='#dfded4',GradientType=0 ); /* IE6-9 */
+margin-top: 7.7em;
+}
 
 .new_shipment_link {
   width: 30%;
   margin: 2em auto;
 }
 
-.area {
-  box-shadow: 10px 10px 15px #888;
-}
-
 .header {
-  width: 135px;
+  width: 200px;
   margin: 0 auto;
   margin-bottom: 2em;
+  font-family: 'Rock Salt', cursive;
+}
+
+.header h3 {
+  font-size: 30px;
 }
 
 .girth {
   text-align: center;
+  margin-bottom: 1.5em;
+  color: #CA171B;
 }
 
 .solutions {
   text-align: center;
+  font-family: 'Covered By Your Grace', cursive;
+}
+
+.solutions h4 {
+  margin-top: -15px;
+  font-size: 25px;
 }
 
 .solutions p {
@@ -50,9 +80,26 @@ form input[type='text'] {
 
 form .actions {
   width: 50%;
+
 }
 
-form .btn-block {
+a:hover {
+  text-decoration: none;
+  background: transparent;
+  color: #CA171B;
+}
+
+.btn-block, .btn-block:focus, .btn-block:visited {
+  background-color: #CA171B;
   padding: 8px;
   font-size: 14px;
+  border-color: #CA171B;
+  color: #FFF;
+  text-decoration: none;
+}
+
+.btn-block:hover, .btn-block:active, .btn-block:active:hover, .btn-block:active:focus {
+  background-color: #432F21;
+  border-color: #432F21; 
+  text-decoration: none;
 }

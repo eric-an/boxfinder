@@ -1,10 +1,12 @@
 class BoxesController < ApplicationController
   before_action :set_box, only: [:show, :edit, :update, :destroy]
-
+  before_action :authenticate_user!, except: [:index]
+  load_and_authorize_resource except: [:index]
   # GET /boxes
   # GET /boxes.json
   def index
     @boxes = Box.all.sort_by { |box| [box.length, box.width, box.height] }
+    @shipment = Shipment.first
   end
 
   # GET /boxes/1

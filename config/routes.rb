@@ -1,6 +1,11 @@
 Rails.application.routes.draw do
+  devise_for :users
+  resources :users
   resources :shipments
   resources :boxes
+
+  root to: redirect('/shipments/1')
+  
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
