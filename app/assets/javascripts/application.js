@@ -16,13 +16,13 @@
 //= require_tree .
 
 $(document).on('ready page:load', function (){
-  console.log("rd dsfdsfsdfsa sfsdf sad fdfdsesdfdsfdsfsfady");
+  
   $(".btn").on("click", function() {
-
     $(".btn").hide();
     $(".spinner").append("\
       <i class='fa fa-spinner fa-pulse fa-3x fa-fw'></i>\
       <span class='sr-only'>Loading...</span>\
     ");
-});
+  });
+  
 });
