@@ -23,4 +23,11 @@ class Box < ActiveRecord::Base
     "exceeds girth" if box.girth == "yes"
   end
 
+  def self.box_location(letter)
+    box_sizes = []
+    Box.all.each { |box| box_sizes << box if box.location == letter}
+    box_sizes.sort_by! { |box| [box.length, box.width, box.height] }
+    box_sizes
+  end
+
 end
