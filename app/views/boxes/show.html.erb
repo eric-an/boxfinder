@@ -16,9 +16,11 @@
 </p>
 
 <p>
-  <strong>Weight:</strong>
-  <%= @box.weight %>
+  <strong>Location:</strong>
+  <%= @box.location %>
 </p>
-
-<%= link_to 'Edit', edit_box_path(@box) %> |
-<%= link_to 'Back', boxes_path %>
+<strong>
+<%= link_to 'Edit This Product', edit_box_path(@box) %> |
+<%= link_to 'View All Boxes', boxes_path %> |
+<%= link_to 'Create New Box Size', new_box_path %>
+</strong>

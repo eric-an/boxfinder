@@ -31,3 +31,32 @@
 .list_font_size, .list_font_size h5 {
   font-size: 10px;
 }
+
+.box_index_link {
+  text-align: center;
+}
+
+#new_box_link {
+  width: 30%;
+  margin: 2em auto;
+
+ .btn-block:focus, .btn-block:visited {
+  background-color: #6495ED;
+  padding: 8px;
+  font-size: 14px;
+  border-color: #6495ED;
+  color: #FFF;
+  text-decoration: none;
+  }
+  
+  .btn-block:hover, .btn-block:active, .btn-block:active:hover, .btn-block:active:focus {
+  background-color: #432F21;
+  border-color: #432F21; 
+  text-decoration: none;
+  }
+}
+
+
+
+
+

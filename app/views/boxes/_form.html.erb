@@ -10,29 +10,29 @@
       </ul>
     </div>
   <% end %>
-  <div class="box_form"> 
+  <div class="box_form">
     <div class="field">
       <%= f.label :length %><br>
       <%= f.text_field :length %>
-    </div>
+    </div><br><br>
     <div class="field">
       <%= f.label :width %><br>
       <%= f.text_field :width %>
-    </div>
+    </div><br><br>
     <div class="field">
       <%= f.label :height %><br>
       <%= f.text_field :height %>
-    </div>
-    <div class="field">
-      <%= f.label :weight %><br>
-      <%= f.text_field :weight %>
-    </div>
+    </div><br><br>
     <div class="field">
       <%= f.label :location %><br>
-      <%= f.text_field :location %>
-    </div>
+      <%= f.text_field :location %><br><br>
+        <strong>Location Legend:</strong>
+          <p>A B C D E F G H I <br>DW = Double Walled<br>LRG = Large</p>
+    </div><br>
     <div class="actions">
       <%= f.submit %>
     </div>
   </div>
+
+
 <% end %>

@@ -2,9 +2,13 @@
 
 <h1>Listing Boxes</h1>
   <div class="new_shipment_link">
-    <%= link_to 'Create New Shipment', shipment_path(@shipment), class: "btn btn-lg btn-primary btn-block" %><br>
+    <%= link_to 'Find the Best Box!', shipment_path(@shipment), class: "btn btn-lg btn-primary btn-block" %><br>
   </div>
   
+  <div id="new_box_link">
+    <%= link_to 'Create New Box Size', new_box_path, class: "boxbutton btn btn-lg btn-primary btn-block" %><br>
+  </div>
+
   <div class="row box_section">
 
     <h4>Box Location</h4>
