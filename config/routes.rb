@@ -1,8 +1,17 @@
 Rails.application.routes.draw do
+
   devise_for :users, :path => '', :path_names => {:sign_up => 'adminaccesszone'}
   resources :users
   resources :shipments
   resources :boxes
+
+  resources :counts do
+    collection { post :import }
+  end
+
+  resources :quickbooks do
+    collection { post :import }
+  end
 
   root to: redirect('/shipments/1')
   

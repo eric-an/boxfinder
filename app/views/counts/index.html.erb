@@ -1,0 +1,10 @@
+<h2>Import Counts</h2>
+
+<%= form_tag import_counts_path, multipart: true do %>
+  <%= file_field_tag :file %>
+  <%= submit_tag "Import" %>
+<% end %>
+
+ <% @counts.each do |count| %>
+        <p><%= count.sku %></p>
+    <% end %>
