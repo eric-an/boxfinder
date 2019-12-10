@@ -16,17 +16,17 @@ class Count < ActiveRecord::Base
         multipackSKU = item_name.match(/x\[.*?\]/) unless item_name == nil
         multipackSKU_qty = item_name.match(/\d*x\[/) unless item_name == nil
 
-          # singleSKU.each do |sku|
-          #   edited_sku << sku.gsub(/(\[|\])/,"")
-          # end unless item_name == nil
+          singleSKU.each do |sku|
+            edited_sku << sku.gsub(/(\[|\])/,"")
+          end unless item_name == nil
 
-          # edited_sku.each do |sku|
-          #   # puts "#{sku}\t#{item_qty}"
-          #   blarg = sku.to_s + ","
-          #   pblarg = blarg * item_qty
-          #   bblarg = pblarg.split(",")
-          #   bblarg.each { |o| Count.create(sku: o) }
-          # end
+          edited_sku.each do |sku|
+            # puts "#{sku}\t#{item_qty}"
+            blarg = sku.to_s + ","
+            pblarg = blarg * item_qty
+            bblarg = pblarg.split(",")
+            bblarg.each { |o| Count.create(sku: o) }
+          end
 
           if multipackSKU
             qty = multipackSKU_qty[0].chomp("x[").to_i-1
@@ -45,15 +45,6 @@ class Count < ActiveRecord::Base
             end
           end
       end
-    end
+  end
 end
-
-  # def self.open_spreadsheet(file)
-  #   case File.extname(file.original_filename)
-  #   when ".csv" then Csv.new(file.path, nil, :ignore)
-  #   when ".xls" then Excel.new(file.path, nil, :ignore)
-  #   when ".xlsx" then Excelx.new(file.path, nil, :ignore)
-  #   else raise "Unknown file type: #{file.original_filename}"
-  #   end
-  # end
 

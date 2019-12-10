@@ -4,3 +4,20 @@
   <%= file_field_tag :file %>
   <%= submit_tag "Import" %>
 <% end %>
+
+<p>
+  Download:
+  <%= link_to "CSV", quickbooks_path(format: "csv") %>|  <%= link_to "Excel", quickbooks_path(format: "xls") %>
+</p>
+
+    <% @quickbook.each do |quickbook| %>
+      <div class="col-md-4">
+        <%= quickbook.sku %>
+      </div>
+      <div class="col-md-4">
+       <%= quickbook.name %>
+      </div>
+      <div class="col-md-4">
+        <%= quickbook.counter %>
+      </div>
+    <% end %>
